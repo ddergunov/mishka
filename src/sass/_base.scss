@@ -1,0 +1,119 @@
+.red-border {
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: 0 0 0 3px rgb(255, 45, 82);
+}
+
+.green-border {
+  background: rgba(45, 255, 80, 0.2);
+  box-shadow: 0 0 0 3px rgb(45, 255, 62);
+}
+
+.blue-border {
+  background: rgba(48, 45, 255, 0.2);
+  box-shadow: 0 0 0 3px rgb(45, 48, 255);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cuprum', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  color: white; // text-transform: uppercase;
+}
+
+// img{
+//   min-width: 100%;
+//   height: auto;
+// }
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  &.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.visually-hidden {
+  &:not(:focus) {
+    &:not(:active) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.7);
+  display: none;
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  &--show{
+    display: block;
+    animation-name: bounce;
+    animation-duration: .6s;
+  }
+  &--hide{
+    display: none;
+  }
+  &--error{
+    animation-name: shake;
+    animation-duration: .6s;
+  }
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none !important;
+}
+
+@keyframes bounce {
+  0%    {transform: translateY(-2000px);}
+  70%   {transform: translateY(30px);   }
+  90%   {transform: translateY(-10px);  }
+  100%  {transform: translateY(0);      }
+}
+
+@keyframes shake {
+  0%, 100%                {transform: translateX(0);    }
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80%      {transform: translateX(10px); }
+}
